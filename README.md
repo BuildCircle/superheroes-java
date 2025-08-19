@@ -10,11 +10,11 @@ Our `BattleController` pulls the json file from S3 and works out the winner by c
 
 Have a look at the `/battle` endpoint. How would you make this better?
 
-How would you improve the tests in `com.buildcircle.superheroes/BattleTests.java`?
+How would you improve the tests in `com.buildcircle.superheroes/BattleUnitTests.java`?
 
 ## Weaknesses
 
-Some superheroes are particularly weak against certain supervillains. If a hero has a villain specifed in their `weakness` field then they have 1 point knocked off their score when fighting that villain. This can affect the outcome of the battle.
+Some superheroes are particularly weak against certain supervillains. If a hero has a villain specified in their `weakness` field then they have 1 point knocked off their score when fighting that villain. This can affect the outcome of the battle.
 
 Change the `/battle` endpoint to support this functionality.
 
