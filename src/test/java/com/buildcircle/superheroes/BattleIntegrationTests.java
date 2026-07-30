@@ -1,15 +1,13 @@
 package com.buildcircle.superheroes;
 
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
-import org.junit.Assert;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.resttestclient.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.*;
-import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 @SpringBootTest(classes = SuperheroesApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class BattleIntegrationTests {
 
@@ -33,7 +31,7 @@ class BattleIntegrationTests {
                 HttpMethod.GET, entity, String.class);
 
         //Then
-        Assert.assertTrue(response.getStatusCode() == HttpStatus.OK);
+        assertTrue(response.getStatusCode() == HttpStatus.OK);
     }
 
 }
