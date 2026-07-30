@@ -4,13 +4,14 @@ import com.buildcircle.superheroes.battle.BattleController;
 
 import com.buildcircle.superheroes.characters.CharacterResponse;
 import com.buildcircle.superheroes.characters.CharactersResponse;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Assert;
+import tools.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 
 import java.io.IOException;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 class BattleUnitTests {
@@ -38,7 +39,7 @@ class BattleUnitTests {
         ResponseEntity<String> responseBody = battleController.battle(hero,villain);
 
         //Then
-        Assert.assertTrue(responseBody.getBody().equals("{\"name\":\"Batman\",\"score\":8.3,\"type\":\"hero\"}"));
+        assertTrue(responseBody.getBody().equals("{\"name\":\"Batman\",\"score\":8.3,\"type\":\"hero\"}"));
     }
 
 }
